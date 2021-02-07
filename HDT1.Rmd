@@ -11,10 +11,45 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Hoja de Trabajo 1
 library(dplyr)
-setwd("C:\Users\andre\OneDrive\Documents\Mineria de datos\HDT1")
+
+setwd("C:\Users\diego\Documents\Universidad\7mo Semestre\Mineria\HDT1-Mineria-de-Datos")
 movies <- read.csv("tmdb-movies.csv",header = TRUE)
+
 #Inciso 1
 summary(movies)
 head(movies)
+
+#Inciso 2
 glimpse(movies)
+
+#Inciso 3
+#Variables cuantitativas.
+library(e1071)
+popularity = movies$popularity
+kurtosis(popularity)
+
+popularity = movies$popularity
+kurtosis(popularity)
+
+budget = movies$budget
+kurtosis(budget)
+
+revenue = movies$revenue
+kurtosis(revenue)
+
+runtime = movies$runtime
+kurtosis(runtime)
+
+vote_count = movies$vote_count
+kurtosis(vote_count)
+
+vote_average = movies$vote_average
+kurtosis(vote_average)
+hist(vote_average)
+
+revenue_adj = movies$revenue_adj
+kurtosis(revenue_adj)
+
+budget_adj = movies$budget_adj
+kurtosis(budget_adj)
 
