@@ -1,0 +1,20 @@
+---
+title: "Hoja de Trabajo 1"
+author: "Grupo 5"
+date: "2/6/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Hoja de Trabajo 1
+library(dplyr)
+setwd("C:\Users\andre\OneDrive\Documents\Mineria de datos\HDT1")
+movies <- read.csv("tmdb-movies.csv",header = TRUE)
+#Inciso 1
+summary(movies)
+head(movies)
+glimpse(movies)
+

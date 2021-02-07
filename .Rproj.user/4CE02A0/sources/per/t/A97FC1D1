@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1612597252305.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4182684592",
+    "id" : "A97FC1D1",
+    "lastKnownWriteTime" : 1612655945,
+    "last_content_update" : 1612655945183,
+    "path" : "~/Mineria de datos/HDT1/HDT1.Rmd",
+    "project_path" : "HDT1.Rmd",
+    "properties" : {
+        "cursorPosition" : "20,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
