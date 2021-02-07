@@ -53,3 +53,35 @@ kurtosis(revenue_adj)
 budget_adj = movies$budget_adj
 kurtosis(budget_adj)
 
+#4.1
+budget<-movies[with(movies,order(-movies$budget)),1:6]
+head(budget,10)
+
+#4.2
+budget<-movies[with(movies,order(-movies$revenue)),1:6]
+head(budget,10)
+
+#4.3
+budget<-movies[with(movies,order(-movies$vote_count)),1:6]
+head(budget$original_title,1)
+
+#4.4
+budget<-movies[with(movies,order(movies$vote_average)),1:6]
+head(budget$original_title,1)
+
+#4.5
+movies$cuenta <- 1
+movies 
+years <- aggregate (movies$cuenta, by = list(movies$release_year), FUN = sum)
+vec <- c (years)
+
+colors = c("black","red","blue","grey","orange","pink","purple")
+barplot(vec$x, names.arg = vec$Group.1, xlab = "año", ylab ="Cantidad de Licas",main = "Promedio de perdidas",col=colors)
+
+#4.6
+popularity<-movies[with(movies,order(-movies$popularity)),]
+head(popularity$genres,20)
+
+library(tidyr)
+category<-popularity %>%separate(genres,c("categoria1","categoria2","categoria3","categoria4"),sep="\\|")
+head(category$categoria1,20)
