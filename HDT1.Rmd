@@ -85,3 +85,21 @@ head(popularity$genres,20)
 library(tidyr)
 category<-popularity %>%separate(genres,c("categoria1","categoria2","categoria3","categoria4"),sep="\\|")
 head(category$categoria1,20)
+
+
+#4.7
+graph <-aggregate(category$cuenta, by=list(category$categoria1), FUN=sum)
+vec <- c(graph)
+
+colors = c("black","red","blue","grey","orange","pink","purple")
+barplot(vec$x, names.arg = vec$Group.1, xlab = "Genero", ylab ="Frecuencia",main = "¿Cuál es el género que predomina en el conjunto de datos? ",col=colors)
+
+
+#4.8
+ganancias<-aggregate(category$revenue, by=list(category$categoria1), FUN=sum)
+View(ganancias)
+
+#4.9
+presupuesto2<-aggregate(category$budget, by=list(category$categoria1), FUN=sum)
+View(presupuesto2)
+
