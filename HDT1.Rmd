@@ -155,3 +155,18 @@ abline(lm(ingresos[,2]~ingresos[,1]), col="pink")
 month<-movies %>%separate(release_date,c("mes","dia","anio"),sep="\\/")
 ingresos1<-aggregate(month$revenue, by=list(month$mes), FUN=mean)
 View(ingresos1)
+
+#4.13
+library(tidyr)
+month<-movies %>%separate(release_date,c("mes","dia","anio"),sep="\\/")
+View(sort(table(month$mes), decreasing = TRUE))
+
+#4.14
+exito<-data.frame(movies$revenue,movies$popularity, movies$original_title)
+plot(exito[,2], ingreso[,1], main="Diagrama de Dispersion", xlab="Popularity", ylab="Revenue")
+abline(lm(ingresos[,1]~exito[,2]), col="blue")
+
+#4.15
+longtime<-category[with(category,order(-category$runtime)),]
+head(longtime$categoria1,10)
+
