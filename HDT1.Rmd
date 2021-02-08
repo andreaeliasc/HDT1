@@ -137,3 +137,21 @@ View(ganancias)
 presupuesto2<-aggregate(category$budget, by=list(category$categoria1), FUN=sum)
 View(presupuesto2)
 
+#4.10
+votaciones<-category[with(category,order(-category$vote_average)),]
+top20 = head(voteAvg,30)
+director<-aggregate(top20$vote_average, by=list(top20$director), FUN=sum
+
+#4.11
+ingresos <-data.frame(movies$budget,movies$revenue, movies$original_title)
+
+library(MASS)
+cor(x=ingresos[,1], y=ingresos[,2])
+
+plot(ingresos[,1], ingresos[,2], main="¿Cómo se correlacionan los presupuestos con los ingresos? " ,xlab="Budget", ylab="Revenue")
+abline(lm(ingresos[,2]~ingresos[,1]), col="pink")
+
+#4.12
+month<-movies %>%separate(release_date,c("mes","dia","anio"),sep="\\/")
+ingresos1<-aggregate(month$revenue, by=list(month$mes), FUN=mean)
+View(ingresos1)
