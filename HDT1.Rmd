@@ -53,6 +53,40 @@ kurtosis(revenue_adj)
 budget_adj = movies$budget_adj
 kurtosis(budget_adj)
 
+#variables cualitativas
+
+library(tidyr)
+
+original_title <- data.frame(table(movies$original_title))
+
+cast <- data.frame(table(do.call(c, lapply(movies$cast, function(x) unlist(strsplit(x, "\\|"))))))
+
+homepage <- data.frame(table(movies$homepage))
+homepage[homepage == ""] <- NA
+homepage <- na.omit(homepage)
+
+director <- data.frame(table(movies$director))
+director[director == ""] <- NA
+director <- na.omit(director)
+
+tagline <- data.frame(table(movies$tagline))
+tagline[tagline == ""] <- NA
+tagline <- na.omit(tagline)
+
+keywords <- data.frame(table(do.call(c, lapply(movies$keywords, function(x) unlist(strsplit(x, "\\|"))))))
+
+overview <- data.frame(table(movies$overview))
+overview[overview == ""] <- NA
+overview <- na.omit(overview)
+
+genres <- data.frame(table(do.call(c, lapply(movies$genres, function(x) unlist(strsplit(x, "\\|"))))))
+
+production_companies <- data.frame(table(do.call(c, lapply(movies$production_companies, function(x) unlist(strsplit(x, "\\|"))))))
+
+release_year <- data.frame(table(movies$release_year))
+
+release_date <- data.frame(table(movies$release_date))
+
 #4.1
 budget<-movies[with(movies,order(-movies$budget)),1:6]
 head(budget,10)
