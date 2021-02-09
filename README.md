@@ -10,5 +10,5 @@ Integrantes:
 - [Script de R](HojaDeTrabajo1.R)
 - [Informe en Rmd](informe.Rmd)
 
-##DISCLAIMER
+## DISCLAIMER
 Cambiar el path de donde se encuentra el archivo .csv 
